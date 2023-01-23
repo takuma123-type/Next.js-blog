@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webapp01:
+    container_name: webapp01
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/usr/src/webapp01
+    command: sh -c "cd sample_app && npm run dev"
+    ports:
+      - 8080:3000
